@@ -1,0 +1,16 @@
+.nav-bar {
+    position: fixed;
+    width: 100%;
+    background: rgb(45, 45, 62);
+    top: 0;
+}
+
+.nav-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.links > * {
+    margin-right: 8px;
+}
