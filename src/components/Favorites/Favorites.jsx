@@ -23,7 +23,7 @@ const Favorites = () => {
       if (user) {
         const { uid } = user;
         setUser(uid);
-        const url = `${baseUrl}/favorite/${uid}`;
+        const url = `${baseUrl}/favorite/${uid}/`;
         axios.get(url).then((res) => {
           if (res.status === 200) {
             setList(res.data.favorites);
