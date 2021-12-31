@@ -3,7 +3,6 @@ import {} from "firebase/auth";
 import firebaseApp from "../../config/firebase-config";
 import { firebaseAuth, googleSignIn, googleSignOut } from "../../service/auth";
 import "./GoogleButton.css";
-import "../../App.css";
 import { baseUrl } from "../../config/goth-stock-api";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -17,8 +16,8 @@ function GoogleButton() {
     fetchDisplayName(user);
   }, [user]);
 
-  firebaseAuth.onAuthStateChanged(({ uid }) => {
-    setUser(uid);
+  firebaseAuth.onAuthStateChanged((user) => {
+    setUser(user?.uid);
   });
 
   const fetchDisplayName = async (uid) => {
@@ -40,7 +39,7 @@ function GoogleButton() {
     const { displayName, uid } = await googleSignIn();
     const url = `${baseUrl}/profile/${uid}/`;
     const body = { display_name: displayName };
-    await axios.post(url, body);
+    await axios.post(url, body).catch(() => {});
   };
 
   return (
@@ -48,18 +47,18 @@ function GoogleButton() {
       {user ? (
         <div className="googleNav">
           <Link to="/favorites">Favorites</Link>
-          <div class="dropdown-menu">
-            <button class="menu-btn">{displayName}</button>
-            <div class="menu-content">
+          <div className="dropdown-menu">
+            <button className="menu-btn">{displayName}</button>
+            <div className="menu-content">
               <Profile />
+              <button className="googleButton menu-btn" onClick={signOut}>
+                Sign Out
+              </button>
             </div>
           </div>
-          <button className="googleButton" onClick={signOut}>
-            Sign Out
-          </button>
         </div>
       ) : (
-        <button className="googleButton" onClick={signIn}>
+        <button className="googleButton menu-btn" onClick={signIn}>
           Sign In
         </button>
       )}

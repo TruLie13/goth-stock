@@ -9,8 +9,8 @@ const Profile = () => {
   const [user, setUser] = useState(null);
   const [displayName, setDisplayName] = useState("");
 
-  firebaseAuth.onAuthStateChanged(({ uid }) => {
-    setUser(uid);
+  firebaseAuth.onAuthStateChanged((user) => {
+    setUser(user?.uid);
   });
 
   const updateDisplayName = async () => {

@@ -53,7 +53,9 @@ const Body = () => {
     });
   }, []);
 
-  const search = () => {
+  const search = (event) => {
+    event.preventDefault();
+
     api.search
       .getPhotos({
         query: `${searchTerm}`,
@@ -75,15 +77,17 @@ const Body = () => {
   return (
     <div>
       <div>
-        <input
-          className="searchInput"
-          autoComplete="off"
-          name="searchTerm"
-          label="Search for Images"
-          onChange={updateSearchTerm}
-          value={searchTerm}
-        />
-        <button onClick={search}>Search</button>
+        <form onSubmit={search}>
+          <input
+            className="searchInput"
+            autoComplete="off"
+            name="searchTerm"
+            label="Search for Images"
+            onChange={updateSearchTerm}
+            value={searchTerm}
+          />
+        </form>
+        {/* <button onClick={search}>Search</button> */}
       </div>
       {data ? (
         <div className="feed">
