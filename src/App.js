@@ -4,6 +4,7 @@ import Favorites from "./components/Favorites";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
+import Profile from "./components/Profile";
 
 import HomePage from "./Pages/HomePage";
 import FavoritesPage from "./Pages/FavoritesPage";
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/favorites" element={<FavoritesPage />} />
+          <Route exact path="/profile" element={<Profile />} />
           <Route path="*" element={<RedirectRoute />} />
         </Routes>
       </BrowserRouter>

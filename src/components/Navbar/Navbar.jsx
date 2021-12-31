@@ -7,6 +7,7 @@ const Navbar = () => (
     <div className="nav-body">
       <div className="links">
         <Link to="/">Home</Link>
+        <Link to="/Profile">Profile</Link>
         <Link to="/favorites">Favorites</Link>
       </div>
       <GoogleButton />

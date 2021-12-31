@@ -86,13 +86,13 @@ const Body = () => {
       </div>
       {data ? (
         <div className="feed">
-          <ul className="columnUl">
+          <div className="columnUl">
             {data.response.results.map((photo) => (
-              <li key={photo.id} className="li">
+              <div key={photo.id} className="li">
                 <PhotoComp photo={photo} uid={uid} />
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       ) : (
         <div></div>
