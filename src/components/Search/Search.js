@@ -42,7 +42,7 @@ const PhotoComp = ({ photo, uid }) => {
 const Body = () => {
   const [uid, setUid] = useState(null);
   const [data, setPhotosResponse] = useState(null);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("Smoke");
 
   useEffect(() => {
     firebaseAuth.onAuthStateChanged((user) => {
@@ -76,6 +76,7 @@ const Body = () => {
     <div>
       <div>
         <input
+          className="searchInput"
           autoComplete="off"
           name="searchTerm"
           label="Search for Images"

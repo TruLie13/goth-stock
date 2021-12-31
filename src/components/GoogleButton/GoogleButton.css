@@ -1,0 +1,57 @@
+.googleNav {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+.menu-btn {
+    background-color: rgb(21, 21, 21);
+    color: white;
+    padding: 16px;
+    font-size: 17px;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+ }
+ .dropdown-menu {
+    position: relative;
+    display: inline-block;
+ }
+ .menu-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(19, 19, 19);
+    min-width: 160px;
+    height: auto;
+    z-index: 1;
+ }
+ nav{
+    background-color: rgb(38, 10, 57);
+ }
+ .links,.links-hidden{
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+ }
+ .links-hidden{
+    display: block;
+ }
+ .links{
+    display: inline-block;
+ }
+ .links-hidden:hover,.links:hover {
+    text-decoration: none;
+
+ }
+ .dropdown-menu:hover .menu-content {
+    display: block;
+ }
+ .dropdown-menu:hover .menu-btn {
+    background-color: rgb(23, 23, 23);
+ }
+
+ .googleButton {
+ 
+ }

@@ -6,11 +6,11 @@ const Navbar = () => (
   <div className="nav-bar">
     <div className="nav-body">
       <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/Profile">Profile</Link>
-        <Link to="/favorites">Favorites</Link>
+        <Link to="/">Goth Stock</Link>
       </div>
-      <GoogleButton />
+      <div>
+        <GoogleButton />
+      </div>
     </div>
   </div>
 );

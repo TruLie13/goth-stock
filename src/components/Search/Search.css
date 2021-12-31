@@ -1,12 +1,38 @@
 .addToFavorite {
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 70%;
 }
 .img {
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
-    padding-top: 5%;
-    padding-bottom: 2%;
-  }
+    width: 70%;
+}
+div.li {
+    margin: 5%;
+    align-items: center;
+    width: auto;
+    overflow-y: scroll;
+    white-space: nowrap;
+
+
+}
+.searchInput {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    height: 5vh;
+    width: 60%;
+    padding: 6px 12px;
+    background-color: rgb(36, 36, 36);
+    border-radius: 25px;
+    border: 1px solid rgb(167,148,148);
+    text-align: center;
+    color: rgb(167,148,148);
+    font-weight: bold;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

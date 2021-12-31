@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import {} from "firebase/auth";
 import firebaseApp from "../../config/firebase-config";
 import { firebaseAuth, googleSignIn, googleSignOut } from "../../service/auth";
+import "./GoogleButton.css";
 import "../../App.css";
-import styles from "./GoogleButton.css";
 import { baseUrl } from "../../config/goth-stock-api";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import Profile from "../Profile";
 
 function GoogleButton() {
   const [user, setUser] = useState(null);
@@ -44,12 +46,22 @@ function GoogleButton() {
   return (
     <div>
       {user ? (
-        <div>
-          <span style={{ margin: "0 8px" }}>{displayName}</span>
-          <button onClick={signOut}>Sign Out</button>
+        <div className="googleNav">
+          <Link to="/favorites">Favorites</Link>
+          <div class="dropdown-menu">
+            <button class="menu-btn">{displayName}</button>
+            <div class="menu-content">
+              <Profile />
+            </div>
+          </div>
+          <button className="googleButton" onClick={signOut}>
+            Sign Out
+          </button>
         </div>
       ) : (
-        <button onClick={signIn}>Google</button>
+        <button className="googleButton" onClick={signIn}>
+          Sign In
+        </button>
       )}
     </div>
   );

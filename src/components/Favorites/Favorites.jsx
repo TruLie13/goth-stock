@@ -24,11 +24,11 @@ const Favorites = () => {
   }, []);
 
   return (
-    <>
+    <div className="favImg">
       {list.map((item) => (
         <img key={item.id} alt="" src={item.photo_id} />
       ))}
-    </>
+    </div>
   );
 };
 
