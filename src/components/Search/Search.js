@@ -9,6 +9,7 @@ import firebaseApp from "../../config/firebase-config";
 import { firebaseAuth } from "../../service/auth";
 import "./Search.css";
 import { baseUrl } from "../../config/goth-stock-api";
+import { Snackbar } from "@mui/material";
 
 const api = createApi({
   // Don't forget to set your access token here!
@@ -21,20 +22,31 @@ const PhotoComp = ({ photo, uid }) => {
 
   const saveImage = (url) => {
     const saveUrl = `${baseUrl}/favorite/${uid}/`;
-    axios.post(saveUrl, { photo_id: url });
+    axios.post(saveUrl, { photo_id: url }).then(() => {
+      setOpen(true);
+    });
   };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const [open, setOpen] = useState(false);
 
   return (
     <Fragment>
+      <Snackbar
+        open={open}
+        autoHideDuration={3000}
+        onClose={handleClose}
+        message="Added to Favorites"
+      />
       <img
         className="img"
         alt=""
         src={urls.regular}
         onDoubleClick={() => saveImage(urls.regular)}
       />
-      <button className="addToFavorite" onClick={() => saveImage(urls.regular)}>
-        Add to Favorites
-      </button>
     </Fragment>
   );
 };
@@ -42,7 +54,7 @@ const PhotoComp = ({ photo, uid }) => {
 const Body = () => {
   const [uid, setUid] = useState(null);
   const [data, setPhotosResponse] = useState(null);
-  const [searchTerm, setSearchTerm] = useState("Smoke");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     firebaseAuth.onAuthStateChanged((user) => {
@@ -82,7 +94,7 @@ const Body = () => {
             className="searchInput"
             autoComplete="off"
             name="searchTerm"
-            label="Search for Images"
+            placeholder="Search for Images"
             onChange={updateSearchTerm}
             value={searchTerm}
           />
