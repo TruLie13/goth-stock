@@ -6,9 +6,9 @@
 Website for developers to find Black and White stock images. 
 - sign in (using Google through Firebase API)
 - Search for B&W images (through Unsplash API)
-- Double Click images to save in your favorites
+- Double Click images to save to your favorites
 - Check out your favorite page to view or remove images
-- hover over your Display name to disver a dropdown menu to edit your name or sign-out
+- hover over your Display Name to discover a dropdown menu to edit your name or sign-out
 
 
 
