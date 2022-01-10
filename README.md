@@ -1,4 +1,10 @@
-# [Live Demo](https://goth-stock.herokuapp.com/)
+#Goth Stock
+
+## [Live Demo](https://goth-stock.herokuapp.com/)
+
+
+
+
 
 # Getting Started with Create React App
 
