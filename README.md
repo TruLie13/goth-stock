@@ -2,7 +2,7 @@
 
 ## [Live Demo](https://goth-stock.herokuapp.com/)
 
-###Website Walk-through
+### Website Walk-through
 Website for developers to find Black and White stock images. 
 - sign in (using Google through Firebase API)
 - Search for B&W images (through Unsplash API)
